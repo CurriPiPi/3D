@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+		<title>3D</title>
+		<style type="text/css">
+			
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			#headermenus {
+				margin:0;
+				width:900px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			.nav {
+			position:sticky;
+}
+			
+			.nav > li {
+				float:left;
+				
+			}
+			
+			.nav li a {
+cursor: pointer;
+				
+							background-color:LightBlue;
+				color:#0;
+				text-decoration:none;
+			padding:0px 12px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background-color:CornflowerBlue;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:350px;
+				z-index:2;
+				
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				min-width:600px;
+				left:350px;
+				top:0px;
+								
+			}
+			.nav li ul li ul li ul {
+				min-width:600px;
+				left 650px;
+				top:0px;					
+			}
+
+			.nav {
+			top:30px;
+			position:fixed;
+			}
+nav {
+	position:fixed;
+    width: 12em;
+    height: 20em;
+    line-height: 2em;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    overflow: scroll;
+    overflow-x: visible;
+}
+			
+
+		</style>
+	</head>
+
+
+
+
+
+
+<head>
+
+<style>
+
+h1 {
+position: fixed;
+width: 100%;
+margin:0;
+padding:0;
+font-size: 13pt;
+font-family: 'Lucida', monospace;
+background-color: CornflowerBlue;
+line-height: 1.7em;
+color:white;
+}
+
+body {
+margin-left: 15px;
+font-size: 10pt;
+font-family: 'Lucida', monospace;
+}
+
+</style>
+
+
+  <script src="p5.js"></script>
+  <script src="sketch.js"></script>
+ <script src="p5.3d.js"></script>
+<script src="p5.easycam.js"></script>
+
+
+<body>
+<ul class='nav'>
+<li><a href="#news">Blanco</a></li>
+<li><a href="#news">Blanco</a></li>
+<li><a href="#news">Blanco</a></li>
+<li><a href="#news">Blanco</a></li>
+
+  <li><a>Home</a>
+	<ul>
+            <li><a onClick="show_menu('ROJO')">Rojo</a></li>
+	    <li><a onClick="show_menu('VERDE')">Verde</a></li>
+	    <li><a onClick="show_menu('FUCSIA')">Fucsia</a></li>
+	</ul>
+    </li>
+
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+<p id="info">Original text here</p>
+
+
+  <main>
+  </main>
+</body>
+
+</html>
+
+<script>
+function show_menu(c) {
+
+const paragraph = document.getElementById("info");
+
+if (c=='ROJO') 
+{
+idselected='200@0@0';
+state.distance=120;
+state.center=[20, 0, 0];
+easycam.setState(state, 1000); // animate to state in 1 second
+easycam.state_reset = state;   // state to use on reset
+
+}
+
+
+if (c=='VERDE') 
+{
+idselected='0@200@0';
+state.distance=120;
+state.center=[70, -30, 80];
+easycam.setState(state, 1000); // animate to state in 1 second
+easycam.state_reset = state;   // state to use on reset
+}
+
+if (c=='FUCSIA') 
+{
+idselected='200@0@200';
+state.distance=120;
+state.center=[120, 30, -80];
+easycam.setState(state, 1000); // animate to state in 1 second
+easycam.state_reset = state;   // state to use on reset
+}
+
+//conectar(20,0,0,70,60,-60,201,0,0,255);
+//conectar(120,30,-80,70,60,-60,201,0,0,255);
+//caja(230,40,70,10,10,10,200,0,200,255);
+}
+</script>
